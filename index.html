@@ -265,6 +265,8 @@ h1 span { color: #63b3ed; }
   height: 80px;
   border-radius: 50%;
   background: linear-gradient(135deg, #2b6cb0, #553c9a);
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,6 +276,56 @@ h1 span { color: #63b3ed; }
   color: #fff;
   margin: 0 auto 1rem;
   border: 2px solid rgba(99,179,237,0.4);
+  overflow: hidden;
+}
+
+/* ============================================================
+   CSS - AVATAR URL UPLOADER
+   ============================================================ */
+.avatar-uploader {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.75rem;
+}
+
+.avatar-uploader input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.avatar-uploader input:focus {
+  outline: none;
+  border-color: rgba(99,179,237,0.5);
+}
+
+.avatar-uploader input::placeholder { color: #4a5568; }
+
+.avatar-uploader button {
+  background: linear-gradient(90deg, #63b3ed, #b794f4);
+  color: #0a0f1e;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.avatar-uploader button:hover { opacity: 0.9; }
+
+.avatar-hint {
+  font-size: 0.65rem;
+  color: #4a5568;
+  margin-top: 6px;
+  line-height: 1.5;
 }
 
 .profile-name {
@@ -325,6 +377,103 @@ h1 span { color: #63b3ed; }
 .stat-icon { font-size: 1.4rem; margin-bottom: 6px; }
 .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #718096; margin-bottom: 2px; }
 .stat-value { font-size: 0.85rem; font-weight: 500; color: #e2e8f0; }
+
+/* ============================================================
+   CSS - BUTTONS
+   ============================================================ */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: 1px solid transparent;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: linear-gradient(90deg, #63b3ed, #b794f4);
+  color: #0a0f1e;
+}
+
+.btn-primary:hover { box-shadow: 0 8px 24px rgba(99,179,237,0.3); }
+
+.btn-outline {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.15);
+  color: #e2e8f0;
+}
+
+.btn-outline:hover {
+  border-color: rgba(99,179,237,0.4);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ============================================================
+   CSS - PROJECT CARD
+   ============================================================ */
+.project-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card:hover {
+  border-color: rgba(99,179,237,0.4);
+  transform: translateY(-3px);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #63b3ed;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.project-link:hover { color: #b794f4; }
+
+.project-link::after { content: '↗'; }
 
 /* ============================================================
    CSS - SECTIONS
@@ -450,15 +599,37 @@ footer {
         <span class="chip">Football</span>
         <span class="chip">University of San Agustin</span>
       </div>
+
+      <!-- ============================================================
+           RESUME BUTTON
+           To add your resume: upload a file named "resume.pdf" into
+           the same folder as this index.html, then this button will
+           open it in a new tab. Change the filename here if needed.
+           ============================================================ -->
+      <div class="btn-row animate-up delay-5">
+        <a href="resume.pdf" target="_blank" class="btn btn-primary">📄 View Resume</a>
+        <a href="resume.pdf" download class="btn btn-outline">⬇ Download</a>
+      </div>
     </div>
 
     <!-- RIGHT SIDE -->
     <div class="hero-right animate-up delay-2">
       <div class="profile-card">
-        <div class="avatar">ID</div>
+        <div class="avatar" id="avatar">ID</div>
         <div class="profile-name">Ian Rey Duenas</div>
         <div class="profile-course">BSCPE</div>
         <div class="profile-school">University of San Agustin</div>
+
+        <!-- ============================================================
+             AVATAR URL UPLOADER
+             Paste a direct image link (must end in .jpg/.png/.webp etc,
+             not a facebook.com or blob: link) and click Set.
+             ============================================================ -->
+        <div class="avatar-uploader">
+          <input type="url" id="avatar-url-input" placeholder="Paste image URL...">
+          <button id="avatar-url-btn" type="button">Set</button>
+        </div>
+        <div class="avatar-hint">Tip: right-click any photo online → "Copy image address" for a direct link.</div>
       </div>
 
       <div class="stats-row">
@@ -547,6 +718,34 @@ footer {
 </div>
 
 <!-- ============================================================
+     HTML - PROJECTS SECTION
+     To add a project: copy one .project-card block and edit the
+     title, description, and the href link inside <a class="project-link">.
+     ============================================================ -->
+<div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <div class="section">
+    <div class="section-label">Projects</div>
+    <div class="section-title">Things I've Built</div>
+    <div class="skills-grid">
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-title">🌐 My Website</div>
+        </div>
+        <div class="project-desc">
+          A short description of this project — what it does, what you used to build it, and what you learned.
+        </div>
+        <!-- EDIT THE href BELOW WITH YOUR ACTUAL WEBSITE LINK -->
+        <a href="https://your-website-link-here.com" target="_blank" class="project-link">Visit site</a>
+      </div>
+
+      <!-- Copy the block above to add more projects -->
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
      HTML - FOOTER
      ============================================================ -->
 <footer>
@@ -585,6 +784,53 @@ footer {
       box.style.boxShadow = 'none';
     });
   });
+
+  // ============================================================
+  // AVATAR URL UPLOADER
+  // Lets you preview a profile picture instantly by pasting a
+  // direct image URL. This only affects your own browser session
+  // (it does not save automatically for other visitors). Once you
+  // find a URL you like, copy it into the AVATAR_IMAGE_URL constant
+  // near the top of this script to make it permanent for everyone.
+  // ============================================================
+  const AVATAR_IMAGE_URL = ""; // <-- paste your final image URL here to make it permanent
+
+  const avatarEl = document.getElementById('avatar');
+  const avatarInput = document.getElementById('avatar-url-input');
+  const avatarBtn = document.getElementById('avatar-url-btn');
+
+  function setAvatarImage(url) {
+    if (!url) return;
+    avatarEl.style.backgroundImage = `url("${url}")`;
+    avatarEl.textContent = ''; // clear the "ID" initials
+  }
+
+  // Load the permanent image if one has been set in the code
+  if (AVATAR_IMAGE_URL) {
+    setAvatarImage(AVATAR_IMAGE_URL);
+  }
+
+  if (avatarBtn) {
+    avatarBtn.addEventListener('click', function() {
+      const url = avatarInput.value.trim();
+      if (!url) return;
+
+      // Block known non-working link types
+      if (url.startsWith('blob:') || url.includes('facebook.com')) {
+        alert('This link won\'t work here. Please use a direct image URL (ending in .jpg, .png, .webp, etc.), or upload the photo to a site like imgur.com and paste that link instead.');
+        return;
+      }
+
+      setAvatarImage(url);
+    });
+
+    avatarInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        avatarBtn.click();
+      }
+    });
+  }
 
   // Smooth scroll for any anchor links (future use)
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
