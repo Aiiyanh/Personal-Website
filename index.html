@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ian Rey Duenas</title>
+
+<!-- ============================================================
+     GOOGLE FONTS
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HTML - HERO SECTION
+     ============================================================ -->
+<section class="hero">
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-glow2"></div>
+
+  <div class="hero-content">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-left">
+      <div class="tag animate-up delay-1"><span class="dot"></span> Student Profile</div>
+      <h1 class="animate-up delay-2">Ian Rey <span>Duenas</span></h1>
+      <p class="subtitle animate-up delay-3">
+        <strong>BS Computer Engineering</strong> &nbsp;·&nbsp; University of San Agustin
+      </p>
+
+      <div class="goal-card animate-up delay-4">
+        <div class="goal-label">Career Goal</div>
+        <div class="goal-text">Research Lead of Company Projects</div>
+      </div>
+
+      <div class="chips animate-up delay-5">
+        <span class="chip">Computer Engineering</span>
+        <span class="chip accent">Research Lead</span>
+        <span class="chip">Football</span>
+        <span class="chip">University of San Agustin</span>
+      </div>
+
+      <!-- ============================================================
+           RESUME BUTTON
+           To add your resume: upload a file named "resume.pdf" into
+           the same folder as this index.html, then this button will
+           open it in a new tab. Change the filename here if needed.
+           ============================================================ -->
+      <div class="btn-row animate-up delay-5">
+        <a href="resume.pdf" target="_blank" class="btn btn-primary">📄 View Resume</a>
+        <a href="resume.pdf" download class="btn btn-outline">⬇ Download</a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="hero-right animate-up delay-2">
+      <div class="profile-card">
+        <!-- ============================================================
+             PROFILE PHOTO
+             Upload a file named "profile.jpg" into the same folder as
+             this index.html. If no photo is found, initials show instead.
+             ============================================================ -->
+        <div class="avatar" id="avatar">
+          <img src="profile.jpg" alt="Ian Rey Duenas" id="avatar-img" onerror="this.style.display='none'; document.getElementById('avatar').textContent='ID';">
+        </div>
+        <div class="profile-name">Ian Rey Duenas</div>
+        <div class="profile-course">BSCPE</div>
+        <div class="profile-school">University of San Agustin</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-icon">🎓</div>
+          <div class="stat-label">Program</div>
+          <div class="stat-value">BSCPE</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">⚽</div>
+          <div class="stat-label">Hobby</div>
+          <div class="stat-value">Football</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🏫</div>
+          <div class="stat-label">University</div>
+          <div class="stat-value">San Agustin</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🔬</div>
+          <div class="stat-label">Goal</div>
+          <div class="stat-value">Research Lead</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     HTML - ABOUT ME SECTION
+     ============================================================ -->
+<div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <div class="section" style="padding: 3rem 2rem;">
+    <div class="section-label">About Me</div>
+    <div class="section-title">Hello, I'm Ian 👋</div>
+    <p id="about-text" style="color: #a0aec0; font-size: 1rem; line-height: 1.9; max-width: 680px;">
+      I'm a Computer Engineering student at the
+      <strong style="color:#e2e8f0;">University of San Agustin</strong>,
+      driven by a passion for technology, innovation, and research. My goal is to become a
+      <strong style="color:#63b3ed;">Research Lead</strong>
+      where I can spearhead meaningful company projects that push the boundaries of engineering.
+      Outside the lab, you'll find me on the football field — where teamwork and strategy
+      are just as important as they are in tech.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     HTML - SKILLS SECTION
+     ============================================================ -->
+<div class="section">
+  <div class="section-label">Core Skills</div>
+  <div class="section-title">What I Bring</div>
+  <div class="skills-grid">
+
+    <div class="skill-item">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">Computer Engineering</div>
+      <div class="skill-desc">Hardware & software integration, embedded systems</div>
+      <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-icon">🔬</div>
+      <div class="skill-name">Research & Analysis</div>
+      <div class="skill-desc">Technical research, data gathering & reporting</div>
+      <div class="bar-track"><div class="bar-fill" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-icon">🧩</div>
+      <div class="skill-name">Problem Solving</div>
+      <div class="skill-desc">Logical thinking, debugging, system design</div>
+      <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-name">Team Leadership</div>
+      <div class="skill-desc">Coordination, communication, project management</div>
+      <div class="bar-track"><div class="bar-fill" data-width="75%"></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     HTML - PROJECTS SECTION
+     To add a project: copy one .project-card block and edit the
+     title, description, and the href link inside <a class="project-link">.
+     ============================================================ -->
+<div style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <div class="section">
+    <div class="section-label">Projects</div>
+    <div class="section-title">Things I've Built</div>
+    <div class="skills-grid">
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-title">🌐 My Website</div>
+        </div>
+        <div class="project-desc">
+          A short description of this project — what it does, what you used to build it, and what you learned.
+        </div>
+        <!-- EDIT THE href BELOW WITH YOUR ACTUAL WEBSITE LINK -->
+        <a href="https://your-website-link-here.com" target="_blank" class="project-link">Visit site</a>
+      </div>
+
+      <!-- Copy the block above to add more projects -->
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HTML - FOOTER
+     ============================================================ -->
+<footer>
+  © 2026 Ian Rey Duenas &nbsp;·&nbsp; BSCPE &nbsp;·&nbsp; University of San Agustin
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT - SKILL BAR ANIMATION (Intersection Observer)
+     ============================================================ -->
+<script src="script.js"></script>
+
+</body>
+</html>
